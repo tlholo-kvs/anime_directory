@@ -1,4 +1,8 @@
+import 'package:anime_app/screens/add_anime_title.dart';
 import 'package:anime_app/screens/home_page.dart';
+import 'package:anime_app/screens/login_register.dart';
+import 'package:anime_app/screens/profile.dart';
+import 'package:anime_app/screens/settings.dart';
 import 'package:flutter/material.dart';
 
 class RouteManager {
@@ -18,6 +22,21 @@ class RouteManager {
     switch (settings.name) {
       case homePage:
         return MaterialPageRoute(builder: (context) => const MainPage());
+
+      case addAnimePage:
+        return MaterialPageRoute(builder: (context) => const AddNewAnime());
+
+      case loginRegisterPage:
+        return MaterialPageRoute(builder: (context) => const LoginRegister());
+
+      case profilePage:
+        return MaterialPageRoute(builder: (context) => const Profile());
+
+      case settingsPage:
+        return MaterialPageRoute(builder: (context) => const Settings());
+
+      default:
+        throw const FormatException("Route not found");
     }
   }
 }
